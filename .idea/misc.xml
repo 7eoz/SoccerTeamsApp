@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/leona/AndroidStudioProjects/SoccerTeamsApp/app/src/main/res/layout/activity_details.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/leona/AndroidStudioProjects/SoccerTeamsApp/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/leona/AndroidStudioProjects/SoccerTeamsApp/app/src/main/res/layout/soccer_teams_list_adapter.xml" value="0.22826086956521738" />
       </map>

@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -56,20 +57,14 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onItemClick(View view, int position) {
                                 SoccerTeam soccerTeam = soccerTeams.get(position);
-                                Toast.makeText(
-                                        getApplicationContext(),
-                                        "selecionado " + soccerTeam.getTeamName(),
-                                        Toast.LENGTH_SHORT
-                                ).show();
+                                Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
+                                intent.putExtra("soccerTeam", soccerTeam);
+                                startActivity(intent);
                             }
 
                             @Override
                             public void onLongItemClick(View view, int position) {
-                                Toast.makeText(
-                                        getApplicationContext(),
-                                        "Clique longo",
-                                        Toast.LENGTH_SHORT
-                                ).show();
+
                             }
 
                             @Override
@@ -83,13 +78,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void createSoccerTeam(){
-        SoccerTeam soccerTeam = new SoccerTeam(R.drawable.coxa,"Coritiba Foot Ball Club", "Curitiba/PR");
+        SoccerTeam soccerTeam = new SoccerTeam(1, R.drawable.coxa,"Coritiba Foot Ball Club", "Curitiba/PR");
         soccerTeams.add(soccerTeam);
-        soccerTeam = new SoccerTeam(R.drawable.flamengo,"Clube de Regatas Flamengo", "Rio de Janeiro/RJ");
+        soccerTeam = new SoccerTeam(2, R.drawable.flamengo,"Clube de Regatas Flamengo", "Rio de Janeiro/RJ");
         soccerTeams.add(soccerTeam);
-        soccerTeam = new SoccerTeam(R.drawable.corinthians,"Sport Club Corinthians Paulista", "São Paulo/SP");
+        soccerTeam = new SoccerTeam(3, R.drawable.corinthians,"Sport Club Corinthians Paulista", "São Paulo/SP");
         soccerTeams.add(soccerTeam);
-        soccerTeam = new SoccerTeam(R.drawable.athletico,"Clube Athletico Paranaense", "Curitiba/PR");
+        soccerTeam = new SoccerTeam(4, R.drawable.athletico,"Clube Athletico Paranaense", "Curitiba/PR");
         soccerTeams.add(soccerTeam);
     }
 }

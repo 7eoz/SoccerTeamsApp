@@ -1,7 +1,10 @@
 package com.leo.soccerteamsapp.model;
 
-public class SoccerTeam {
+import java.io.Serializable;
 
+public class SoccerTeam implements Serializable {
+
+    private int id;
     private int emblem;
     private String teamName;
     private String cityState;
@@ -10,10 +13,15 @@ public class SoccerTeam {
 
     }
 
-    public SoccerTeam(int emblem, String teamName, String cityState) {
+    public SoccerTeam(int id, int emblem, String teamName, String cityState) {
+        this.id = id;
         this.emblem = emblem;
         this.teamName = teamName;
         this.cityState = cityState;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public int getEmblem() {
