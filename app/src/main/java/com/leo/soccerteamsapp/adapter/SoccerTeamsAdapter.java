@@ -10,10 +10,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.leo.soccerteamsapp.R;
+import com.leo.soccerteamsapp.model.SoccerTeam;
 
 import java.util.List;
 
 public class SoccerTeamsAdapter extends RecyclerView.Adapter<SoccerTeamsAdapter.MyViewHolder> {
+
+    private List<SoccerTeam> soccerTeams;
+
+    public SoccerTeamsAdapter(List<SoccerTeam> list) {this.soccerTeams = list;}
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView teamName, cityState;
@@ -38,14 +43,15 @@ public class SoccerTeamsAdapter extends RecyclerView.Adapter<SoccerTeamsAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.teamName.setText("Time 1");
-        holder.cityState.setText("Time 1");
-        holder.teamEmblem.setImageResource(R.drawable.ic_launcher_background);
+        SoccerTeam soccerTeam = soccerTeams.get(position);
+        holder.teamName.setText(soccerTeam.getTeamName());
+        holder.cityState.setText(soccerTeam.getCityState());
+        holder.teamEmblem.setImageResource(soccerTeam.getEmblem());
     }
 
 
     @Override
     public int getItemCount() {
-        return 4;
+        return soccerTeams.size();
     }
 }

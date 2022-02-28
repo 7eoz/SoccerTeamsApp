@@ -1,23 +1,23 @@
 package com.leo.soccerteamsapp.model;
 
-public class soccerTeam {
+public class SoccerTeam {
 
-    private int image;
+    private int emblem;
     private String teamName;
     private String cityState;
 
-    public soccerTeam() {
+    public SoccerTeam() {
 
     }
 
-    public soccerTeam(int image, String teamName, String cityState) {
-        this.image = image;
+    public SoccerTeam(int emblem, String teamName, String cityState) {
+        this.emblem = emblem;
         this.teamName = teamName;
         this.cityState = cityState;
     }
 
-    public int getImage() {
-        return image;
+    public int getEmblem() {
+        return emblem;
     }
 
     public String getTeamName() {
@@ -28,8 +28,8 @@ public class soccerTeam {
         return cityState;
     }
 
-    public void setImage(int image) {
-        this.image = image;
+    public void setEmblem(int emblem) {
+        this.emblem = emblem;
     }
 
     public void setTeamName(String teamName) {
